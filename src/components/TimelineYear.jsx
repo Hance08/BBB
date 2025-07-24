@@ -16,7 +16,7 @@ const TimelineYear = ({ yearData, isExpanded, onToggle, index }) => {
           <h3 className="year-subtitle">{yearData.subtitle}</h3>
         </div>
         <span className={`expand-icon ${isExpanded ? "expanded" : ""}`}>
-          {isExpanded ? "−" : "+"}
+          {isExpanded ? "-" : "▼"}
         </span>
       </div>
       <AnimatePresence>

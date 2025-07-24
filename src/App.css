@@ -14,4 +14,34 @@
   .container {
     padding: 0 15px;
   }
+}
+
+main {
+  padding: 0 20px;
+}
+
+.music-toggle-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.music-toggle-btn:hover {
+  background: rgba(255, 105, 180, 0.8);
+  transform: scale(1.1);
 } 
