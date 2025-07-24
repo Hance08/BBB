@@ -1,0 +1,17 @@
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 30%, #FF69B4 100%);
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+} 

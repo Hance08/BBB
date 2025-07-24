@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF69B4 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 自定義滾動條 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #FFD700, #FF69B4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #FFA500, #FF1493);
+} 

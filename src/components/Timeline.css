@@ -1,0 +1,318 @@
+.timeline-section {
+  padding: 80px 0 120px;
+  background: rgba(255, 255, 255, 0.03);
+  margin: 40px 20px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.timeline-title {
+  text-align: center;
+  font-size: 3rem;
+  background: linear-gradient(45deg, #FFD700, #FF69B4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 80px;
+  font-weight: 600;
+}
+
+.timeline-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* 年度樣式 */
+.timeline-year {
+  margin-bottom: 60px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 25px;
+  border: 2px solid rgba(255, 215, 0, 0.2);
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.year-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  background: rgba(255, 215, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.year-header:hover {
+  background: rgba(255, 215, 0, 0.15);
+}
+
+.year-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.year-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #FFD700, #FF69B4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.year-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+}
+
+.expand-icon {
+  font-size: 1.5rem;
+  color: #FFD700;
+  transition: transform 0.3s ease;
+}
+
+/* 事件容器 */
+.events-container {
+  position: relative;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 80px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #FFD700, #FF69B4);
+  border-radius: 2px;
+}
+
+/* 事件樣式 */
+.timeline-event {
+  position: relative;
+  display: flex;
+  margin-bottom: 40px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-event:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.special-event {
+  border: 2px solid rgba(255, 105, 180, 0.4);
+  background: rgba(255, 105, 180, 0.1);
+}
+
+.special-event:hover {
+  background: rgba(255, 105, 180, 0.15);
+  box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+}
+
+.future-event {
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  background: rgba(255, 215, 0, 0.05);
+  opacity: 0.9;
+}
+
+/* 事件節點 */
+.event-node {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-right: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.special-ring {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border: 3px solid #FF69B4;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.event-dot {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.special-dot {
+  background: linear-gradient(45deg, #FF69B4, #FF1493);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* 事件內容 */
+.event-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.event-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.event-date {
+  background: rgba(255, 215, 0, 0.2);
+  color: #FFD700;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.event-title {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  font-weight: 600;
+}
+
+.event-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* 照片預留空間 */
+.photo-placeholder {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.photo-placeholder:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 215, 0, 0.4);
+}
+
+.photo-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.photo-text {
+  font-size: 0.9rem;
+}
+
+/* 未來事件標記 */
+.future-badge {
+  display: inline-block;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: rgba(0, 0, 0, 0.8);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 15px;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .timeline-section {
+    margin: 20px 10px;
+    padding: 60px 20px 80px;
+  }
+  
+  .timeline-title {
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+  }
+  
+  .year-header {
+    padding: 25px 25px;
+  }
+  
+  .year-number {
+    font-size: 2rem;
+  }
+  
+  .year-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .events-container {
+    padding: 30px 20px;
+  }
+  
+  .timeline-line {
+    left: 60px;
+  }
+  
+  .timeline-event {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .event-node {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+  
+  .event-dot {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .special-ring {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .event-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .event-title {
+    font-size: 1.2rem;
+  }
+  
+  .photo-placeholder {
+    padding: 20px;
+  }
+} 
