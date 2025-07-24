@@ -6,49 +6,31 @@ const TimelineYear = ({ yearData, isExpanded, onToggle, index }) => {
   return (
     <motion.div
       className="timeline-year"
-      initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, delay: 3.5 + index * 0.2 }}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      {/* 年度標題 */}
-      <motion.div
-        className="year-header"
-        onClick={onToggle}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-      >
+      <div className="year-header" onClick={onToggle}>
         <div className="year-info">
-          <h3 className="year-number">{yearData.year}</h3>
-          {yearData.title && (
-            <span className="year-subtitle">{yearData.title}</span>
-          )}
+          <h2 className="year-number">{yearData.year}</h2>
+          <h3 className="year-subtitle">{yearData.subtitle}</h3>
         </div>
-        <motion.div
-          className="expand-icon"
-          animate={{ rotate: isExpanded ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          ▼
-        </motion.div>
-      </motion.div>
-
-      {/* 年度事件列表 */}
+        <span className={`expand-icon ${isExpanded ? "expanded" : ""}`}>
+          {isExpanded ? "−" : "+"}
+        </span>
+      </div>
       <AnimatePresence>
         {isExpanded && (
           <motion.div
-            className="events-container"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="events-container"
           >
-            <div className="timeline-line"></div>
+            <div className="timeline-line" />
             {yearData.events.map((event, eventIndex) => (
-              <TimelineEvent
-                key={`${event.date}-${eventIndex}`}
-                event={event}
-                index={eventIndex}
-              />
+              <TimelineEvent key={event.id} event={event} index={eventIndex} />
             ))}
           </motion.div>
         )}

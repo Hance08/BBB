@@ -5,18 +5,10 @@ import timelineData from "../data/timelineData";
 import TimelineYear from "./TimelineYear";
 
 const Timeline = () => {
-  const [expandedYears, setExpandedYears] = useState(
-    timelineData.reduce((acc, yearData) => {
-      acc[yearData.year] = true; // 預設全部展開
-      return acc;
-    }, {})
-  );
+  const [openYear, setOpenYear] = useState(null);
 
   const toggleYear = (year) => {
-    setExpandedYears((prev) => ({
-      ...prev,
-      [year]: !prev[year],
-    }));
+    setOpenYear(openYear === year ? null : year);
   };
 
   return (
@@ -41,7 +33,7 @@ const Timeline = () => {
             <TimelineYear
               key={yearData.year}
               yearData={yearData}
-              isExpanded={expandedYears[yearData.year]}
+              isExpanded={openYear === yearData.year}
               onToggle={() => toggleYear(yearData.year)}
               index={index}
             />
