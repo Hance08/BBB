@@ -33,7 +33,7 @@ const Timeline = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 3.2 }}
         >
-          ✨ 我們的愛情時光軸 ✨
+          ✨ The timeline of our love ✨
         </motion.h2>
 
         <div className="timeline-container">

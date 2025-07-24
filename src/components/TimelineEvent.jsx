@@ -6,7 +6,7 @@ const TimelineEvent = ({ event, index }) => {
     const date = new Date(dateString);
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
-    return `${month}/${day}`;
+    return `${month}-${day}`;
   };
 
   return (
@@ -42,27 +42,42 @@ const TimelineEvent = ({ event, index }) => {
 
       {/* 事件內容 */}
       <div className="event-content">
-        <div className="event-header">
-          <span className="event-date">{formatDate(event.date)}</span>
-          <h4 className="event-title">{event.title}</h4>
+        <div className="event-body">
+          <div className="event-text-content">
+            <div className="event-header">
+              <span className="event-date">{formatDate(event.date)}</span>
+              <h4 className="event-title">{event.title}</h4>
+            </div>
+
+            <p className="event-description">{event.description}</p>
+
+            {/* 未來事件標記 */}
+            {event.isFuture && (
+              <div className="future-badge">
+                <span>✨ 期待中 ✨</span>
+              </div>
+            )}
+          </div>
+          {/* 照片顯示區 */}
+          {event.hasPhoto &&
+            (event.image ? (
+              <div className="photo-container">
+                <motion.img
+                  src={event.image}
+                  alt={event.title}
+                  className="event-photo"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                />
+              </div>
+            ) : (
+              <div className="photo-placeholder">
+                <div className="photo-icon">📸</div>
+                <span className="photo-text">照片位置預留</span>
+              </div>
+            ))}
         </div>
-
-        <p className="event-description">{event.description}</p>
-
-        {/* 照片預留空間 */}
-        {event.hasPhoto && (
-          <div className="photo-placeholder">
-            <div className="photo-icon">📸</div>
-            <span className="photo-text">照片位置預留</span>
-          </div>
-        )}
-
-        {/* 未來事件標記 */}
-        {event.isFuture && (
-          <div className="future-badge">
-            <span>✨ 期待中 ✨</span>
-          </div>
-        )}
       </div>
     </motion.div>
   );

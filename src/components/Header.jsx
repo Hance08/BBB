@@ -17,7 +17,7 @@ const Header = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          💕 生日快樂 💕
+          💕 鼻鼻 生日快樂 💕
         </motion.h1>
         <motion.p
           className="subtitle"
@@ -25,7 +25,7 @@ const Header = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          我們一起走過的美好時光
+          Hance & Vivi 一起走過的美好時光
         </motion.p>
       </div>
 

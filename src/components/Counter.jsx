@@ -10,7 +10,6 @@ const Counter = ({ startDate }) => {
     hours: 0,
     minutes: 0,
     seconds: 0,
-    totalDays: 0,
   });
 
   useEffect(() => {
@@ -18,10 +17,6 @@ const Counter = ({ startDate }) => {
       const start = new Date(startDate);
       const now = new Date();
 
-      // 計算總天數
-      const totalDays = Math.floor((now - start) / (1000 * 60 * 60 * 24));
-
-      // 計算詳細時間
       let years = now.getFullYear() - start.getFullYear();
       let months = now.getMonth() - start.getMonth();
       let days = now.getDate() - start.getDate();
@@ -29,7 +24,6 @@ const Counter = ({ startDate }) => {
       let minutes = now.getMinutes() - start.getMinutes();
       let seconds = now.getSeconds() - start.getSeconds();
 
-      // 處理負數情況
       if (seconds < 0) {
         seconds += 60;
         minutes--;
@@ -59,7 +53,6 @@ const Counter = ({ startDate }) => {
         hours,
         minutes,
         seconds,
-        totalDays,
       });
     };
 
@@ -68,15 +61,6 @@ const Counter = ({ startDate }) => {
 
     return () => clearInterval(interval);
   }, [startDate]);
-
-  const timeUnits = [
-    { label: "年", value: timeData.years, icon: "💕" },
-    { label: "個月", value: timeData.months, icon: "🌸" },
-    { label: "天", value: timeData.days, icon: "☀️" },
-    { label: "小時", value: timeData.hours, icon: "⭐" },
-    { label: "分鐘", value: timeData.minutes, icon: "💫" },
-    { label: "秒", value: timeData.seconds, icon: "✨" },
-  ];
 
   return (
     <motion.section
@@ -92,39 +76,29 @@ const Counter = ({ startDate }) => {
           animate={{ scale: 1 }}
           transition={{ duration: 0.8, delay: 2 }}
         >
-          我們在一起已經
+          Hance & Vivi 在一起已經
         </motion.h2>
 
         <motion.div
-          className="total-days"
+          className="continuous-time"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2.2 }}
         >
-          <span className="big-number">{timeData.totalDays}</span>
-          <span className="big-label">天了 💖</span>
+          <span className="time-number">{timeData.years}</span>
+          <span className="time-label">年</span>
+          <span className="time-number">{timeData.months}</span>
+          <span className="time-label">個月</span>
+          <span className="time-number">{timeData.days}</span>
+          <span className="time-label">天</span>
+          <span className="time-number">{timeData.hours}</span>
+          <span className="time-label">小時</span>
+          <span className="time-number">{timeData.minutes}</span>
+          <span className="time-label">分鐘</span>
+          <span className="time-number">{timeData.seconds}</span>
+          <span className="time-label">秒</span>
+          <span className="heart-suffix">💖</span>
         </motion.div>
-
-        <div className="time-grid">
-          {timeUnits.map((unit, index) => (
-            <motion.div
-              key={unit.label}
-              className="time-unit"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.6,
-                delay: 2.5 + index * 0.1,
-                type: "spring",
-                stiffness: 100,
-              }}
-            >
-              <div className="time-icon">{unit.icon}</div>
-              <div className="time-number">{unit.value}</div>
-              <div className="time-label">{unit.label}</div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </motion.section>
   );
