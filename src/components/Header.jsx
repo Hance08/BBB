@@ -52,6 +52,23 @@ const Header = () => {
           </motion.div>
         ))}
       </div>
+      <div className="birthday-card">
+        <div className="outside">
+          <div className="front">
+            <p>Happy Birthday</p>
+            <div className="cake">
+              <div className="top-layer"></div>
+              <div className="middle-layer"></div>
+              <div className="bottom-layer"></div>
+              <div className="candle"></div>
+            </div>
+          </div>
+          <div className="back"></div>
+        </div>
+        <div className="inside">
+          <p>Happy Birthday</p>
+        </div>
+      </div>
     </motion.header>
   );
 };
