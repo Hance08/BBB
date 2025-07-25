@@ -10,23 +10,44 @@ const Header = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
-      <div className="container">
-        <motion.h1
-          className="title"
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          💕 鼻鼻 生日快樂 💕
-        </motion.h1>
-        <motion.p
-          className="subtitle"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-        >
-          Hance & Vivi 一起走過的美好時光
-        </motion.p>
+      <div className="header-container">
+        <div className="right-side">
+          <motion.h1
+            className="title"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            💕 鼻鼻 生日快樂 💕
+          </motion.h1>
+          <motion.p
+            className="subtitle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
+            Hance & Vivi 一起走過的美好時光
+          </motion.p>
+        </div>
+        <div className="left-sied">
+          <div className="birthday-card">
+            <div className="outside">
+              <div className="front">
+                <p>Happy Birthday</p>
+                <div className="cake">
+                  <div className="top-layer"></div>
+                  <div className="middle-layer"></div>
+                  <div className="bottom-layer"></div>
+                  <div className="candle"></div>
+                </div>
+              </div>
+              <div className="back"></div>
+            </div>
+            <div className="inside">
+              <p>Happy Birthday</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* 飄散的愛心動畫 */}
@@ -51,23 +72,6 @@ const Header = () => {
             💖
           </motion.div>
         ))}
-      </div>
-      <div className="birthday-card">
-        <div className="outside">
-          <div className="front">
-            <p>Happy Birthday</p>
-            <div className="cake">
-              <div className="top-layer"></div>
-              <div className="middle-layer"></div>
-              <div className="bottom-layer"></div>
-              <div className="candle"></div>
-            </div>
-          </div>
-          <div className="back"></div>
-        </div>
-        <div className="inside">
-          <p>Happy Birthday</p>
-        </div>
       </div>
     </motion.header>
   );

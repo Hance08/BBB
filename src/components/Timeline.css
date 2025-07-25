@@ -1,8 +1,6 @@
 .timeline-section {
   padding: 80px 0 120px;
   background: rgba(255, 255, 255, 0.03);
-  margin: 40px 20px;
-  border-radius: 30px;
   backdrop-filter: blur(10px);
 }
 
