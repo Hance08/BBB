@@ -83,13 +83,13 @@
 
 .inside {
   background: linear-gradient(to right, #e0e0e0e0, #ffffff 30%);
-  line-height: 3;
-  padding: 0 20px;
-  text-align: center;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  padding: 40px 20px;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
   left: 50%;
 }
 
@@ -183,12 +183,21 @@
 }
 
 .outside p {
-  font-size: 23px;
+  font-size: 1.2rem;
   text-transform: uppercase;
+  line-height: 1.8;
   margin-top: 30px;
   text-align: center;
   letter-spacing: 6px;
   color: #000046;
+}
+
+.back p {
+  font-size: 1.2rem;
+  text-align: left;
+  padding: 10px 20px;
+  color: black;
+  letter-spacing: 1px;
 }
 
 @keyframes shimmer {
@@ -290,6 +299,28 @@
     border-radius: 0 50% 50% 50%;
     bottom: 15px;
     transform: rotate(45deg);
+  }
+
+  .back p {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 0px;
+    text-align: left;
+    color: black;
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+
+  .inside {
+    background: linear-gradient(to right, #e0e0e0e0, #ffffff 30%);
+    line-height: 1.1;
+    font-size: 0.8rem;
+    padding: 10px 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 50%;
   }
 
 } 
